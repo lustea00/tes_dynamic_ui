@@ -11,7 +11,7 @@ class FormView extends StatefulWidget {
 class _FormViewState extends State<FormView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(child: Scaffold(
       body: FutureBuilder(
         future: UIGenerator().getHttp(),
         builder: (BuildContext context, AsyncSnapshot<Widget> snapshot) {
@@ -22,6 +22,6 @@ class _FormViewState extends State<FormView> {
           }
         },
       ),
-    );
+    ),);
   }
 }
